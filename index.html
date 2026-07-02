@@ -1,0 +1,397 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sweet Bakery</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#fff8f3;
+    color:#333;
+}
+
+header{
+    background:linear-gradient(135deg,#ff9a76,#ff6b6b);
+    color:white;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:yellow;
+}
+
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:80px 8%;
+    flex-wrap:wrap;
+}
+
+.hero-text{
+    flex:1;
+    min-width:300px;
+}
+
+.hero-text h1{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.hero-text p{
+    font-size:18px;
+    margin-bottom:30px;
+    line-height:1.6;
+}
+
+.btn{
+    background:#ff6b6b;
+    color:white;
+    border:none;
+    padding:15px 35px;
+    font-size:18px;
+    cursor:pointer;
+    border-radius:40px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#ff3b3b;
+}
+
+.hero-img{
+    flex:1;
+    text-align:center;
+    min-width:300px;
+}
+
+.hero-img img{
+    width:90%;
+    max-width:500px;
+    border-radius:20px;
+    box-shadow:0 10px 20px rgba(0,0,0,.2);
+}
+
+section{
+    padding:70px 8%;
+}
+
+.title{
+    text-align:center;
+    font-size:38px;
+    margin-bottom:40px;
+    color:#ff6b6b;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.price{
+    color:#ff6b6b;
+    font-size:22px;
+    font-weight:bold;
+    margin:10px 0;
+}
+
+.buy{
+    width:100%;
+    padding:12px;
+    background:#ff6b6b;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.buy:hover{
+    background:#ff3b3b;
+}
+
+.about{
+    display:flex;
+    align-items:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.about img{
+    width:450px;
+    border-radius:15px;
+}
+
+.about-text{
+    flex:1;
+}
+
+.contact{
+    background:white;
+    border-radius:15px;
+    padding:30px;
+    box-shadow:0 10px 20px rgba(0,0,0,.1);
+}
+
+input,textarea{
+    width:100%;
+    padding:15px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+}
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:50px;
+}
+
+@media(max-width:768px){
+
+.hero{
+text-align:center;
+}
+
+.hero-text h1{
+font-size:40px;
+}
+
+.hero-img{
+margin-top:30px;
+}
+
+.about{
+text-align:center;
+}
+
+.about img{
+width:100%;
+}
+
+}
+</style>
+
+</head>
+<body>
+
+<header>
+
+<div class="logo">🍰 Sweet Bakery</div>
+
+<nav>
+<a href="#">Home</a>
+<a href="#menu">Menu</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-text">
+<h1>Fresh Cakes & Delicious Bakery</h1>
+<p>We bake fresh cakes, pastries, cookies and breads every day using premium ingredients. Taste happiness with every bite.</p>
+
+<button class="btn" onclick="scrollToMenu()">Order Now</button>
+
+</div>
+
+<div class="hero-img">
+<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=900" alt="">
+</div>
+
+</section>
+
+<section id="menu">
+
+<h2 class="title">Our Best Sellers</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=800">
+<div class="card-content">
+<h3>Chocolate Cake</h3>
+<p>Rich chocolate layered cake.</p>
+<div class="price">₹499</div>
+<button class="buy" onclick="buy('Chocolate Cake')">Buy Now</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=800">
+<div class="card-content">
+<h3>Strawberry Cake</h3>
+<p>Fresh strawberry cream cake.</p>
+<div class="price">₹599</div>
+<button class="buy" onclick="buy('Strawberry Cake')">Buy Now</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=800">
+<div class="card-content">
+<h3>Cupcakes</h3>
+<p>Soft & colorful cupcakes.</p>
+
+<div class="price">₹299</div>
+<button class="buy" onclick="buy('Cupcakes')">Buy Now</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800">
+<div class="card-content">
+<h3>Fresh Bread</h3>
+<p>Daily baked bread.</p>
+<div class="price">₹99</div>
+<button class="buy" onclick="buy('Fresh Bread')">Buy Now</button>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h2 class="title">About Us</h2>
+
+<div class="about">
+
+<img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=900">
+
+<div class="about-text">
+
+<h2>Welcome To Sweet Bakery</h2>
+
+<br>
+
+<p style="line-height:1.8;">
+Sweet Bakery has been serving fresh cakes and bakery products with love.
+We specialize in birthday cakes, wedding cakes, pastries, cookies, donuts and breads.
+Our mission is to make every celebration sweeter.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2 class="title">Contact Us</h2>
+
+<div class="contact">
+
+<input type="text" placeholder="Your Name">
+
+<input type="email" placeholder="Email">
+
+<textarea rows="5" placeholder="Your Message"></textarea>
+
+<button class="btn" onclick="sendMessage()">Send Message</button>
+
+</div>
+
+</section>
+
+<footer>
+
+<h3>🍩 Sweet Bakery</h3>
+
+<br>
+
+<p>Email : sweetbakery@gmail.com</p>
+
+<p>Phone : +91 9876543210</p>
+
+<br>
+
+<p>© 2026 Sweet Bakery | All Rights Reserved</p>
+
+</footer>
+
+<script>
+
+function buy(product){
+alert("Thank you for ordering " + product + " 🍰");
+}
+
+function sendMessage(){
+alert("Thank you! Your message has been sent.");
+}
+
+function scrollToMenu(){
+document.getElementById("menu").scrollIntoView({
+behavior:"smooth"
+});
+}
+
+</script>
+
+</body>
+</html>
+```
+
